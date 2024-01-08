@@ -1,0 +1,377 @@
+{
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v0.9.7/dab.draft.schema.json",
+  "data-source": {
+    "database-type": "mssql",
+    "connection-string": "@env('my_connection_string')",
+    "options": {}
+  },
+  "runtime": {
+    "rest": {
+      "enabled": true,
+      "path": "/api",
+      "request-body-strict": true
+    },
+    "graphql": {
+      "enabled": true,
+      "path": "/graphql",
+      "allow-introspection": true
+    },
+    "host": {
+      "cors": {
+        "origins": [],
+        "allow-credentials": false
+      },
+      "authentication": {
+        "provider": "AzureAD",
+        "jwt": {
+          "audience": "db645a73-b1c7-48b3-8faa-d10c41a37133",
+          "issuer": "https://sts.windows.net/bbb8da8f-f374-490f-9190-2242176e117c/v2.0"
+        }
+      },
+      "mode": "development"
+    }
+  },
+  
+  "entities": {
+    
+    "INTERCONNECTORSOLN_AUTH": {
+      "source": {
+        "object": "dbo.P5MIN_INTERCONNECTORSOLN",
+        "type": "table",
+        "key-fields": [
+          "LASTCHANGED"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "INTERCONNECTORSOLN_AUTH",
+          "plural": "INTERCONNECTORSOLN_AUTHs"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "DAB.Reader",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "P5MIN_INTERCONNECTORSOLN": {
+      "source": {
+        "object": "dbo.P5MIN_INTERCONNECTORSOLN",
+        "type": "table",
+        "key-fields": [
+          "LASTCHANGED"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "P5MIN_INTERCONNECTORSOLN",
+          "plural": "P5MIN_INTERCONNECTORSOLNs"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "P5MIN_REGIONSOLUTION": {
+      "source": {
+        "object": "dbo.P5MIN_REGIONSOLUTION",
+        "type": "table",
+        "key-fields": [
+          "RUN_DATETIME"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "P5MIN_REGIONSOLUTION",
+          "plural": "P5MIN_REGIONSOLUTIONs"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "PDR_REPORT_AUDIT": {
+      "source": {
+        "object": "dbo.PDR_REPORT_AUDIT",
+        "type": "table",
+        "key-fields": [
+          "PDR_REPORT_ID"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "PDR_REPORT_AUDIT",
+          "plural": "PDR_REPORT_AUDITs"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "PREDISPATCHINTERCONNECTORRES": {
+      "source": {
+        "object": "dbo.PREDISPATCHINTERCONNECTORRES",
+        "type": "table",
+        "key-fields": [
+          "RUNNO"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "PREDISPATCHINTERCONNECTORRES",
+          "plural": "PREDISPATCHINTERCONNECTORREs"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "PREDISPATCHPRICE": {
+      "source": {
+        "object": "dbo.PREDISPATCHPRICE",
+        "type": "table",
+        "key-fields": [
+          "RUNNO"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "PREDISPATCHPRICE",
+          "plural": "PREDISPATCHPRICEs"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "PREDISPATCHREGIONSUM": {
+      "source": {
+        "object": "dbo.PREDISPATCHREGIONSUM",
+        "type": "table",
+        "key-fields": [
+          "LASTCHANGED"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "PREDISPATCHREGIONSUM",
+          "plural": "PREDISPATCHREGIONSUMs"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "STPASA_INTERCONNECTORSOLN": {
+      "source": {
+        "object": "dbo.STPASA_INTERCONNECTORSOLN",
+        "type": "table",
+        "key-fields": [
+          "LASTCHANGED"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "STPASA_INTERCONNECTORSOLN",
+          "plural": "STPASA_INTERCONNECTORSOLNs"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "STPASA_REGIONSOLUTION": {
+      "source": {
+        "object": "dbo.STPASA_REGIONSOLUTION",
+        "type": "table",
+        "key-fields": [
+          "LASTCHANGED"
+        ]
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "STPASA_REGIONSOLUTION",
+          "plural": "STPASA_REGIONSOLUTIONs"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "read"
+            }
+          ]
+        }
+      ]
+    },
+    "DISPATCHINTERCONNECTORRES": {
+      "source": {
+        "object": "dbo.DISPATCHINTERCONNECTORRES",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "DISPATCHINTERCONNECTORRES",
+          "plural": "DISPATCHINTERCONNECTORREs"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*"
+            }
+          ]
+        }
+      ]
+    },
+    "DISPATCHPRICE": {
+      "source": {
+        "object": "dbo.DISPATCHPRICE",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "DISPATCHPRICE",
+          "plural": "DISPATCHPRICEs"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*"
+            }
+          ]
+        }
+      ]
+    },
+    "DISPATCHREGIONSUM": {
+      "source": {
+        "object": "dbo.DISPATCHREGIONSUM",
+        "type": "table"
+      },
+      "graphql": {
+        "enabled": true,
+        "type": {
+          "singular": "DISPATCHREGIONSUM",
+          "plural": "DISPATCHREGIONSUMs"
+        }
+      },
+      "rest": {
+        "enabled": true
+      },
+      "permissions": [
+        {
+          "role": "anonymous",
+          "actions": [
+            {
+              "action": "*"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
